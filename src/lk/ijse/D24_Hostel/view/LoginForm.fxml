@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" accessibleRole="IMAGE_VIEW" prefHeight="550.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.D24_Hostel.controller.LoginFormController">
+   <children>
+      <ImageView fitHeight="550.0" fitWidth="362.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/image/mountain5.jpg" />
+         </image></ImageView>
+      <TextField fx:id="txtUserName" layoutX="115.0" layoutY="212.0" onAction="#txtUserNameOnAction" prefHeight="25.0" prefWidth="147.0" promptText="           User name" styleClass="text" stylesheets="@../style/Style.css" />
+      <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="83.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/icon/icons8-user-24.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="83.0" layoutY="254.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/icon/icons8-password-key-24.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="142.0" layoutY="292.0" onAction="#btnLogin" prefHeight="25.0" prefWidth="71.0" styleClass="loginButton" stylesheets="@../style/Style.css" text="Login">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="122.0" layoutY="343.0" text="Welcome" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="104.0" layoutY="396.0" text="Don't you have a Account ?" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <JFXButton layoutX="144.0" layoutY="423.0" onAction="#btnSignUp" prefHeight="25.0" prefWidth="71.0" styleClass="loginButton" stylesheets="@../style/Style.css" text="Sign up">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <PasswordField fx:id="txtPassword" layoutX="115.0" layoutY="253.0" prefHeight="25.0" prefWidth="147.0" promptText="            Password" styleClass="text" stylesheets="@../style/Style.css" />
+      <ImageView fx:id="closeEye" fitHeight="17.0" fitWidth="17.0" layoutX="239.0" layoutY="257.0" onMouseClicked="#closeEyeOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/icon/closeeye.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtPassword2" layoutX="115.0" layoutY="253.0" prefHeight="25.0" prefWidth="147.0" promptText="            Password" styleClass="text" stylesheets="@../style/Style.css" visible="false" />
+      <ImageView fx:id="openEye" fitHeight="17.0" fitWidth="17.0" layoutX="239.0" layoutY="256.0" onMouseClicked="#openEyeOnMouseClicked" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../assests/icon/open_eye.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="353.0" prefHeight="550.0" prefWidth="648.0" style="-fx-background-color: A3E7FF;">
+         <children>
+            <ImageView fitHeight="156.0" fitWidth="172.0" layoutX="246.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/image/HOSTEL.jpg" />
+               </image></ImageView>
+            <Label layoutX="31.0" layoutY="196.0" lineSpacing="5.0" prefHeight="307.0" prefWidth="586.0" text="D24 hostel is a small hostel for university students in Colombo, Sri Lanka. It has separate rooms for boys and girls, and can host up to 125 students. D24 hostel uses a hostel management system to automate its operations and boost its bookings. The system handles reservations, room allocation, check-in and check-out, billing, inventory, reporting, and more. It also links to online travel agencies (OTAs) such as HostelWorld, Booking.com, and Airbnb, and enables guests to book rooms online. The system helps D24 hostel to enhance its efficiency, profitability, and guest satisfaction ." textAlignment="JUSTIFY" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

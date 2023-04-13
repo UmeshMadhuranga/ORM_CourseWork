@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane1" prefHeight="550.0" prefWidth="1000.0" style="-fx-background-color: B5C1C9;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.D24_Hostel.controller.RegisterFormController">
+   <children>
+      <Separator layoutX="184.0" orientation="VERTICAL" prefHeight="550.0" prefWidth="0.0" style="-fx-background-color: black;" />
+      <JFXButton layoutX="29.0" layoutY="217.0" onAction="#btnManageStudentOnAction" prefHeight="29.0" prefWidth="126.0" styleClass="sideBarButton" stylesheets="@../style/Style.css" text="Manage students" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXButton>
+      <JFXButton layoutX="29.0" layoutY="261.0" onAction="#btnManageRoomsOnAction" prefHeight="29.0" prefWidth="126.0" styleClass="sideBarButton" stylesheets="@../style/Style.css" text="Manage rooms" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXButton>
+      <JFXButton layoutX="29.0" layoutY="304.0" onAction="#btnRegistrationOnAction" prefHeight="29.0" prefWidth="126.0" styleClass="sideBarButton" stylesheets="@../style/Style.css" text="Registration" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXButton>
+      <AnchorPane fx:id="pane" layoutX="190.0" layoutY="1.0" prefHeight="550.0" prefWidth="810.0">
+         <children>
+            <Label layoutX="354.0" layoutY="24.0" text="Registration">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="774.0" layoutY="10.0" onMouseClicked="#imgSettingOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/icon/icons8-settings-100.png" />
+               </image>
+            </ImageView>
+            <JFXButton disable="true" layoutX="603.0" layoutY="502.0" onAction="#btnCheckAgainOnAction" styleClass="loginButton" stylesheets="@../style/Style.css" text="Check again" visible="false">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets right="6.0" />
+               </opaqueInsets></JFXButton>
+            <JFXButton layoutX="708.0" layoutY="502.0" onAction="#btnRegisterOnAction" prefHeight="29.0" prefWidth="81.0" styleClass="RegisterButton" stylesheets="@../style/Style.css" text="Register">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></JFXButton>
+            <Label layoutX="409.0" layoutY="337.0" text="Key money : ">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <Label layoutX="223.0" layoutY="337.0" text="Room Id : ">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <Label layoutX="30.0" layoutY="337.0" text="Type : ">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <Separator layoutX="28.0" layoutY="303.0" prefHeight="3.0" prefWidth="754.0" style="-fx-background-color: F3FE9C;" />
+            <Label fx:id="lblDate" layoutX="16.0" layoutY="14.0" text="Date" textFill="#37306b">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Label>
+            <Label layoutX="398.0" layoutY="185.0" text="Gender           : ">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <Label layoutX="398.0" layoutY="151.0" text="Date of birth : ">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <Label layoutX="33.0" layoutY="217.0" text="Address           : ">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <Label layoutX="398.0" layoutY="116.0" text="Contact No    : ">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <Label layoutX="32.0" layoutY="185.0" text="Student name : ">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <Label layoutX="31.0" layoutY="151.0" text="Student ID       :">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <Label layoutX="30.0" layoutY="116.0" text="Register ID       : ">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <JFXTextField fx:id="txtStudentID" focusColor="#8d7b68" layoutX="136.0" layoutY="143.0" onAction="#txtStudentIDOnAction" prefHeight="25.0" prefWidth="108.0" />
+            <JFXTextField fx:id="txtStudentName" focusColor="#8d7b68" layoutX="136.0" layoutY="177.0" prefHeight="25.0" prefWidth="205.0" />
+            <JFXTextField fx:id="txtAddress" focusColor="#8d7b68" layoutX="136.0" layoutY="214.0" prefHeight="25.0" prefWidth="205.0" />
+            <JFXTextField fx:id="txtContact" focusColor="#8d7b68" layoutX="496.0" layoutY="113.0" prefHeight="25.0" prefWidth="192.0" />
+            <JFXDatePicker fx:id="dtpckrBirthDay" layoutX="496.0" layoutY="148.0" />
+            <JFXRadioButton layoutX="496.0" layoutY="186.0" selected="true" text="Male">
+               <toggleGroup>
+                  <ToggleGroup fx:id="GenderGroup" />
+               </toggleGroup>
+            </JFXRadioButton>
+            <JFXRadioButton layoutX="622.0" layoutY="186.0" text="Female" toggleGroup="$GenderGroup" />
+            <JFXComboBox fx:id="cmbRoomType" layoutX="77.0" layoutY="334.0" onAction="#cmbRoomTypeOnAction" promptText="Select Room" />
+            <Label fx:id="lblRoomId" layoutX="290.0" layoutY="338.0" prefHeight="17.0" prefWidth="108.0" textFill="#2d2727">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblKeyMoney" layoutX="492.0" layoutY="338.0" prefHeight="17.0" prefWidth="108.0" textFill="#2d2727">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="33.0" layoutY="391.0" text="Do you pay now?">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <JFXRadioButton layoutX="178.0" layoutY="393.0" selected="true" text="Pay">
+               <toggleGroup>
+                  <ToggleGroup fx:id="KeyMoneyGroup" />
+               </toggleGroup>
+            </JFXRadioButton>
+            <JFXRadioButton layoutX="277.0" layoutY="392.0" text="Later" toggleGroup="$KeyMoneyGroup" />
+            <JFXButton layoutX="677.0" layoutY="246.0" styleClass="addButton" stylesheets="@../style/Style.css" text="Save Student" visible="false">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="32.0" fitWidth="31.0" layoutX="735.0" layoutY="7.0" onMouseClicked="#imgBackOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/icon/back.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="txtRegisterID" layoutX="136.0" layoutY="115.0" prefHeight="25.0" prefWidth="106.0" />
+            <Label layoutX="608.0" layoutY="337.0" text="Qty : ">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblQty" layoutX="646.0" layoutY="338.0" prefHeight="19.0" prefWidth="54.0" textFill="#2d2727">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="158.0" fitWidth="157.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/image/HOSTEL.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="29.0" layoutY="343.0" onAction="#btnRegistrationDetailsOnAction" prefHeight="29.0" prefWidth="126.0" styleClass="sideBarButton" stylesheets="@../style/Style.css" text="Registration details" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

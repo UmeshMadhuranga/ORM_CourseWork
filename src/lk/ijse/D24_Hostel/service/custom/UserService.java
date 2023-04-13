@@ -1,0 +1,11 @@
+package lk.ijse.D24_Hostel.service.custom;
+
+import lk.ijse.D24_Hostel.dto.UserDTO;
+import lk.ijse.D24_Hostel.service.util.SuperService;
+
+import java.util.List;
+
+public interface UserService extends SuperService {
+    List<UserDTO> getAll();
+    boolean addUser(UserDTO userDTO);
+}

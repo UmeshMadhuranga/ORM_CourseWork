@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane accessibleRole="IMAGE_VIEW" prefHeight="355.0" prefWidth="506.0" style="-fx-background-color: FEFF86;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.D24_Hostel.controller.SignUpFormController">
+   <children>
+      <TextField fx:id="txtUserName" layoutX="187.0" layoutY="140.0" prefHeight="25.0" prefWidth="147.0" promptText="           User name" styleClass="text" stylesheets="@../style/Style.css" />
+      <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="155.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/icon/icons8-user-24.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="155.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/icon/icons8-password-key-24.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="198.0" layoutY="55.0" text="Welcome" textFill="#b50f0f">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="214.0" layoutY="234.0" onAction="#btnSignUp" prefHeight="25.0" prefWidth="87.0" styleClass="loginButton" stylesheets="@../style/Style.css" text="Add User">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <PasswordField fx:id="txtPassword" layoutX="187.0" layoutY="181.0" prefHeight="25.0" prefWidth="147.0" promptText="            Password" styleClass="text" stylesheets="@../style/Style.css" />
+   </children>
+</AnchorPane>
