@@ -2,9 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
-<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXRadioButton?>
-<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
@@ -97,17 +95,6 @@
                <font>
                   <Font name="System Bold" size="13.0" />
                </font></Label>
-            <JFXTextField fx:id="txtStudentID" focusColor="#8d7b68" layoutX="136.0" layoutY="143.0" onAction="#txtStudentIDOnAction" prefHeight="25.0" prefWidth="108.0" />
-            <JFXTextField fx:id="txtStudentName" focusColor="#8d7b68" layoutX="136.0" layoutY="177.0" prefHeight="25.0" prefWidth="205.0" />
-            <JFXTextField fx:id="txtAddress" focusColor="#8d7b68" layoutX="136.0" layoutY="214.0" prefHeight="25.0" prefWidth="205.0" />
-            <JFXTextField fx:id="txtContact" focusColor="#8d7b68" layoutX="496.0" layoutY="113.0" prefHeight="25.0" prefWidth="192.0" />
-            <JFXDatePicker fx:id="dtpckrBirthDay" layoutX="496.0" layoutY="148.0" />
-            <JFXRadioButton layoutX="496.0" layoutY="186.0" selected="true" text="Male">
-               <toggleGroup>
-                  <ToggleGroup fx:id="GenderGroup" />
-               </toggleGroup>
-            </JFXRadioButton>
-            <JFXRadioButton layoutX="622.0" layoutY="186.0" text="Female" toggleGroup="$GenderGroup" />
             <JFXComboBox fx:id="cmbRoomType" layoutX="77.0" layoutY="334.0" onAction="#cmbRoomTypeOnAction" promptText="Select Room" />
             <Label fx:id="lblRoomId" layoutX="290.0" layoutY="338.0" prefHeight="17.0" prefWidth="108.0" textFill="#2d2727">
                <font>
@@ -151,6 +138,12 @@
                   <Font size="13.0" />
                </font>
             </Label>
+            <Label fx:id="txtStudentName" layoutX="136.0" layoutY="182.0" prefHeight="25.0" prefWidth="205.0" />
+            <Label fx:id="txtAddress" layoutX="136.0" layoutY="214.0" prefHeight="25.0" prefWidth="205.0" />
+            <Label fx:id="txtContact" layoutX="495.0" layoutY="113.0" prefHeight="25.0" prefWidth="205.0" />
+            <JFXComboBox fx:id="txtStudentID" layoutX="136.0" layoutY="148.0" onAction="#txtStudentIDOnAction" prefHeight="25.0" prefWidth="106.0" />
+            <Label fx:id="lblGender" layoutX="497.0" layoutY="182.0" prefHeight="25.0" prefWidth="205.0" />
+            <Label fx:id="lblDob" layoutX="495.0" layoutY="148.0" prefHeight="25.0" prefWidth="205.0" />
          </children>
       </AnchorPane>
       <ImageView fitHeight="158.0" fitWidth="157.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">

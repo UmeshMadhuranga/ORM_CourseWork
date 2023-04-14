@@ -14,4 +14,6 @@ public interface RegistrationService extends SuperService {
     boolean saveRegistration(ReservationDTO reservationDTO);
 
     List<ReservationDTO> getAll();
+
+    List<String> loadStudentIDs();
 }

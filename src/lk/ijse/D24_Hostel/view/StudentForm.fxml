@@ -50,7 +50,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TableView fx:id="tblStudent" layoutX="35.0" layoutY="103.0" prefHeight="197.0" prefWidth="745.0">
+      <TableView fx:id="tblStudent" layoutX="35.0" layoutY="103.0" prefHeight="197.0" prefWidth="753.0">
          <columns>
             <TableColumn fx:id="colStudentId" prefWidth="86.33331298828125" text="Student ID" />
             <TableColumn fx:id="colName" prefWidth="145.0" text="Name" />
@@ -58,7 +58,6 @@
             <TableColumn fx:id="colContact" prefWidth="125.66668701171875" text="Contact No" />
             <TableColumn fx:id="colDob" prefWidth="148.0" text="Date of Birth" />
             <TableColumn fx:id="colGender" prefWidth="102.0" text="Gender" />
-            <TableColumn prefWidth="273.0" text="Type" />
          </columns>
       </TableView>
       <Label layoutX="108.0" layoutY="324.0" text="Student ID    : ">
@@ -92,9 +91,9 @@
          </font>
       </Label>
       <JFXTextField fx:id="txtStudentID" focusColor="#8d7b68" layoutX="216.0" layoutY="323.0" onAction="#txtStudentIDOnAction" prefHeight="25.0" prefWidth="116.0" />
-      <JFXTextField fx:id="txtName" focusColor="#8d7b68" layoutX="215.0" layoutY="353.0" prefHeight="25.0" prefWidth="192.0" />
-      <JFXTextField fx:id="txtAddress" focusColor="#8d7b68" layoutX="214.0" layoutY="385.0" prefHeight="25.0" prefWidth="192.0" />
-      <JFXTextField fx:id="txtContact" focusColor="#8d7b68" layoutX="213.0" layoutY="420.0" prefHeight="25.0" prefWidth="192.0" />
+      <JFXTextField fx:id="txtName" focusColor="#8d7b68" layoutX="215.0" layoutY="353.0" onAction="#txtNameOnAction" onMouseClicked="#nameOnMouseClicked" prefHeight="25.0" prefWidth="192.0" />
+      <JFXTextField fx:id="txtAddress" focusColor="#8d7b68" layoutX="214.0" layoutY="385.0" onAction="#txtAddressOnAction" onMouseClicked="#addressOnMouseClicked" prefHeight="25.0" prefWidth="192.0" />
+      <JFXTextField fx:id="txtContact" focusColor="#8d7b68" layoutX="213.0" layoutY="420.0" onAction="#txtContactOnAction" onMouseClicked="#contactOnMouseClicked" prefHeight="25.0" prefWidth="192.0" />
       <JFXDatePicker fx:id="dtpckDob" defaultColor="#8d7b68" layoutX="216.0" layoutY="454.0" />
       <JFXRadioButton layoutX="216.0" layoutY="493.0" selected="true" text="Male">
          <toggleGroup>

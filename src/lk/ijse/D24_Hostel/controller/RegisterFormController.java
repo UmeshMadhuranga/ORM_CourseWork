@@ -2,7 +2,6 @@ package lk.ijse.D24_Hostel.controller;
 
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
-import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -10,15 +9,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.D24_Hostel.dto.ReservationDTO;
 import lk.ijse.D24_Hostel.dto.RoomDTO;
 import lk.ijse.D24_Hostel.dto.StudentDTO;
-import lk.ijse.D24_Hostel.entity.Reservation;
-import lk.ijse.D24_Hostel.entity.Room;
-import lk.ijse.D24_Hostel.service.custom.RegistrationService;
 import lk.ijse.D24_Hostel.service.impl.RegistrationServiceImpl;
 import lk.ijse.D24_Hostel.service.impl.RoomServiceImpl;
 import lk.ijse.D24_Hostel.service.impl.StudentServiceImpl;
@@ -29,7 +24,6 @@ import lk.ijse.D24_Hostel.util.Routes;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 public class RegisterFormController {
@@ -37,13 +31,12 @@ public class RegisterFormController {
 
     public Label lblDate;
 
-    public JFXTextField txtStudentID;
-    public JFXTextField txtStudentName;
-    public JFXTextField txtAddress;
-    public JFXTextField txtContact;
-    public JFXDatePicker dtpckrBirthDay;
-
-    public ToggleGroup GenderGroup;
+    public JFXComboBox txtStudentID;
+    public Label txtStudentName;
+    public Label txtAddress;
+    public Label txtContact;
+    public Label lblDob;
+    public Label lblGender;
 
     public JFXComboBox cmbRoomType;
     public Label lblRoomId;
@@ -56,9 +49,24 @@ public class RegisterFormController {
     public Label txtRegisterID;
     public Label lblQty;
 
+
     public void initialize() {
         loadRegisterId();
         loadRoomIds();
+        loadStudentID();
+    }
+
+    private void loadStudentID() {
+        RegistrationServiceImpl registrationService = (RegistrationServiceImpl) ServiceFactory.getService(ServiceTypes.RESERVATION);
+        List<String> list = registrationService.loadStudentIDs();
+
+        ObservableList<String> studentIdList = FXCollections.observableArrayList();
+
+        for (String id : list) {
+            studentIdList.add(id);
+        }
+        txtStudentID.getItems().setAll(studentIdList);
+
     }
 
     private void loadRoomIds() {
@@ -81,7 +89,7 @@ public class RegisterFormController {
     }
 
     private void loadRegisterId() {
-        RegistrationService registrationService = (RegistrationService) ServiceFactory.getService(ServiceTypes.RESERVATION);
+        RegistrationServiceImpl registrationService = (RegistrationServiceImpl) ServiceFactory.getService(ServiceTypes.RESERVATION);
         List<String> list = registrationService.loadId();
 
         for (String id: list) {
@@ -110,15 +118,12 @@ public class RegisterFormController {
 
     public void btnRegisterOnAction(ActionEvent actionEvent) {
         String registerId = txtRegisterID.getText();
-        String studentId = txtStudentID.getText();
+        String studentId = (String)txtStudentID.getValue();
         String studentName = txtStudentName.getText();
         String address = txtAddress.getText();
         String contact = txtContact.getText();
-        LocalDate dob = dtpckrBirthDay.getValue();
-
-
-        RadioButton radioButton = (RadioButton) GenderGroup.getSelectedToggle();
-        String gender = radioButton.getText();
+        LocalDate dob = LocalDate.parse(lblDob.getText());
+        String gender = lblGender.getText();
 
         StudentDTO studentDTO = new StudentDTO(studentId, studentName, address, contact, dob, gender);
 
@@ -156,13 +161,15 @@ public class RegisterFormController {
     public void txtStudentIDOnAction(ActionEvent actionEvent) {
         StudentServiceImpl studentService = (StudentServiceImpl) ServiceFactory.getService(ServiceTypes.STUDENT);
 
-        StudentDTO studentDTO = studentService.searchStudent(txtStudentID.getText());
+        StudentDTO studentDTO = studentService.searchStudent((String)txtStudentID.getValue());
 
         if (studentDTO != null) {
             txtStudentName.setText(studentDTO.getName());
             txtAddress.setText(studentDTO.getAddress());
             txtContact.setText(studentDTO.getContact_no());
             txtStudentName.setText(studentDTO.getName());
+            lblDob.setText(String.valueOf(studentDTO.getDob()));
+            lblGender.setText(studentDTO.getGender());
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Student not found");
             alert.show();

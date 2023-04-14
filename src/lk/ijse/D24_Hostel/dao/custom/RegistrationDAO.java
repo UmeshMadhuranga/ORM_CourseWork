@@ -14,4 +14,6 @@ public interface RegistrationDAO extends SuperDao {
     boolean save(Reservation reservation);
 
     List<Reservation> getAll();
+
+    List<String> loadStudentId();
 }

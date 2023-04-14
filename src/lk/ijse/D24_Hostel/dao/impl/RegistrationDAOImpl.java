@@ -32,4 +32,9 @@ public class RegistrationDAOImpl implements RegistrationDAO {
         return registrationRepo.getAll();
     }
 
+    @Override
+    public List<String> loadStudentId() {
+        return registrationRepo.loadStudentId();
+    }
+
 }

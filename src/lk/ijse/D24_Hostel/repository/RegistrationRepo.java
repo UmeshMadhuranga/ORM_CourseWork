@@ -59,5 +59,12 @@ public class RegistrationRepo {
         }
         return null;
     }
+
+    public List<String> loadStudentId() {
+        Session session = FactoryConfiguration.getInstance().getSession();
+
+        List<String> list = session.createQuery("SELECT student_id FROM Student ").list();
+        return list;
+    }
 }
 

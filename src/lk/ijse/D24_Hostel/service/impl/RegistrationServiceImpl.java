@@ -32,4 +32,9 @@ public class RegistrationServiceImpl implements RegistrationService {
     public List<ReservationDTO> getAll() {
         return Convertor.toReservationDTOList(registrationDAO.getAll());
     }
+
+    @Override
+    public List<String> loadStudentIDs() {
+        return registrationDAO.loadStudentId();
+    }
 }
