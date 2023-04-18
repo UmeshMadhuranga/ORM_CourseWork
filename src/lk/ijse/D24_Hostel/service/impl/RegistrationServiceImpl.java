@@ -2,6 +2,7 @@ package lk.ijse.D24_Hostel.service.impl;
 
 import lk.ijse.D24_Hostel.converter.Convertor;
 import lk.ijse.D24_Hostel.dao.impl.RegistrationDAOImpl;
+import lk.ijse.D24_Hostel.dao.impl.RoomsDAOImpl;
 import lk.ijse.D24_Hostel.dao.util.DaoFactory;
 import lk.ijse.D24_Hostel.dao.util.DaoTypes;
 import lk.ijse.D24_Hostel.dto.ReservationDTO;
@@ -36,5 +37,11 @@ public class RegistrationServiceImpl implements RegistrationService {
     @Override
     public List<String> loadStudentIDs() {
         return registrationDAO.loadStudentId();
+    }
+
+    @Override
+    public boolean updateRoom(RoomDTO roomDTO1) {
+        RoomsDAOImpl roomsDAO = (RoomsDAOImpl) DaoFactory.getDAO(DaoTypes.ROOMS);
+        return roomsDAO.update(Convertor.convertRoomDTOtoRoom(roomDTO1));
     }
 }

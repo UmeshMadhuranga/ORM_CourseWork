@@ -16,4 +16,6 @@ public interface RegistrationService extends SuperService {
     List<ReservationDTO> getAll();
 
     List<String> loadStudentIDs();
+
+    boolean updateRoom(RoomDTO roomDTO1);
 }

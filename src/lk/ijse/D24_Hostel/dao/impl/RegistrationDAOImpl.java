@@ -36,5 +36,4 @@ public class RegistrationDAOImpl implements RegistrationDAO {
     public List<String> loadStudentId() {
         return registrationRepo.loadStudentId();
     }
-
 }

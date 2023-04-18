@@ -2,23 +2,17 @@ package lk.ijse.D24_Hostel.controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import lk.ijse.D24_Hostel.dto.ReservationDTO;
-import lk.ijse.D24_Hostel.dto.StudentDTO;
 import lk.ijse.D24_Hostel.entity.Reservation;
-import lk.ijse.D24_Hostel.entity.Student;
 import lk.ijse.D24_Hostel.service.impl.RegistrationServiceImpl;
 import lk.ijse.D24_Hostel.service.util.ServiceFactory;
 import lk.ijse.D24_Hostel.service.util.ServiceTypes;
 
-import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -60,13 +54,5 @@ public class ReservationDetailsFormController {
             observableList.add(reservationDTO);
         }
         tblReservationDetails.setItems(observableList);
-    }
-
-    public void imgSettingOnMouseClicked(MouseEvent mouseEvent) throws IOException {
-//        stage = new Stage();
-//        stage.setScene(new Scene(FXMLLoader.load(getClass()
-//                .getResource("/lk/ijse/D24_Hostel/view/UserForm.fxml"))));
-//        stage.setTitle("User settings");
-//        stage.show();
     }
 }

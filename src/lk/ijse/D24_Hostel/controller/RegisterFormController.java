@@ -125,7 +125,7 @@ public class RegisterFormController {
     public void btnCheckAgainOnAction(ActionEvent actionEvent) {
     }
 
-    public void btnRegisterOnAction(ActionEvent actionEvent) {
+    public void btnRegisterOnAction(ActionEvent actionEvent) throws IOException {
         String registerId = txtRegisterID.getText();
         String studentId = (String)txtStudentID.getValue();
         String studentName = txtStudentName.getText();
@@ -144,10 +144,23 @@ public class RegisterFormController {
 
         RoomDTO roomDTO = new RoomDTO(roomId, roomType, keyMoney, qty);
 
+        RegistrationServiceImpl registrationService = (RegistrationServiceImpl) ServiceFactory.getService(ServiceTypes.RESERVATION);
+
+        ////////////////////////////////update rooms//////////////////////////////////////////
+
+        int newQty = qty-1;
+
+        RoomDTO roomDTO1 = new RoomDTO(roomId, roomType, keyMoney, newQty);
+
+        boolean b = registrationService.updateRoom(roomDTO1);
+
+        //////////////////////////////////////////////////////////////////////////
+
         RadioButton radioButton1 = (RadioButton) KeyMoneyGroup.getSelectedToggle();
         String status = radioButton1.getText();
 
         ///////////////////////////////////////////////////////////////////////////
+
         ReservationDTO reservationDTO = new ReservationDTO(
                 registerId,
                 LocalDate.now(),
@@ -156,7 +169,6 @@ public class RegisterFormController {
                 roomDTO
                 );
 
-        RegistrationServiceImpl registrationService = (RegistrationServiceImpl) ServiceFactory.getService(ServiceTypes.RESERVATION);
         boolean isAdded = registrationService.saveRegistration(reservationDTO);
         if (isAdded) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Done..!");
@@ -165,6 +177,16 @@ public class RegisterFormController {
             Alert alert = new Alert(Alert.AlertType.WARNING, "Failed..!");
             alert.show();
         }
+
+        txtStudentName.setText("");
+        txtAddress.setText("");
+        txtContact.setText("");
+        lblDob.setText("");
+        lblGender.setText("");
+
+        lblRoomId.setText("");
+        lblKeyMoney.setText("");
+        lblQty.setText("");
     }
 
     public void txtStudentIDOnAction(ActionEvent actionEvent) {
