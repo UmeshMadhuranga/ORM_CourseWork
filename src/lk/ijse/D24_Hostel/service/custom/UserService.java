@@ -8,4 +8,10 @@ import java.util.List;
 public interface UserService extends SuperService {
     List<UserDTO> getAll();
     boolean addUser(UserDTO userDTO);
+
+    boolean updateUser(UserDTO userDTO);
+
+    boolean deleteUser(String text);
+
+    UserDTO searchUser(String text);
 }

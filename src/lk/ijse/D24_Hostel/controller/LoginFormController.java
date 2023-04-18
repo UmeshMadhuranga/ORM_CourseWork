@@ -34,10 +34,10 @@ public class LoginFormController {
     }
 
     public void btnLogin(ActionEvent actionEvent) throws IOException {
-        if (txtUserName.getText().equals("") || txtPassword.getText().equals("")) {
-            new Alert(Alert.AlertType.ERROR, "Please Enter User name And Password.!").show();
-            return;
-        }
+//        if (txtUserName.getText().equals("") || txtPassword.getText().equals("")) {
+//            new Alert(Alert.AlertType.ERROR, "Please Enter User name And Password.!").show();
+//            return;
+//        }
 
         UserServiceImpl userService = (UserServiceImpl) ServiceFactory.getService(ServiceTypes.USER);
 

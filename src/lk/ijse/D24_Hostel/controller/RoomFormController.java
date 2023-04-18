@@ -12,6 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.D24_Hostel.dto.RoomDTO;
+import lk.ijse.D24_Hostel.dto.StudentDTO;
 import lk.ijse.D24_Hostel.entity.Room;
 import lk.ijse.D24_Hostel.service.impl.RoomServiceImpl;
 import lk.ijse.D24_Hostel.service.util.ServiceFactory;
@@ -128,5 +129,14 @@ public class RoomFormController {
 
     public void txtRoomIDOnAction(ActionEvent actionEvent) {
         btnSearchOnAction(actionEvent);
+    }
+
+    public void tblRoomsOnMouseClicked(MouseEvent mouseEvent) {
+        RoomDTO roomDTO = (RoomDTO) tblRooms.getSelectionModel().getSelectedItem();
+
+        txtRoomID.setText(roomDTO.getRoom_type_id());
+        txtType.setText(roomDTO.getType());
+        txtKeyMoney.setText(String.valueOf(roomDTO.getKey_money()));
+        txtQty.setText(String.valueOf(roomDTO.getQty()));
     }
 }

@@ -1,16 +1,18 @@
 package lk.ijse.D24_Hostel.controller;
 
 import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXDatePicker;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import lk.ijse.D24_Hostel.dto.ReservationDTO;
 import lk.ijse.D24_Hostel.dto.RoomDTO;
 import lk.ijse.D24_Hostel.dto.StudentDTO;
@@ -48,6 +50,8 @@ public class RegisterFormController {
 
     public Label txtRegisterID;
     public Label lblQty;
+
+    public static Stage stage;
 
 
     public void initialize() {
@@ -110,7 +114,12 @@ public class RegisterFormController {
         }
     }
 
-    public void imgSettingOnMouseClicked(MouseEvent mouseEvent) {
+    public void imgSettingOnMouseClicked(MouseEvent mouseEvent) throws IOException {
+        stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass()
+                .getResource("/lk/ijse/D24_Hostel/view/UserForm.fxml"))));
+        stage.setTitle("User settings");
+        stage.show();
     }
 
     public void btnCheckAgainOnAction(ActionEvent actionEvent) {

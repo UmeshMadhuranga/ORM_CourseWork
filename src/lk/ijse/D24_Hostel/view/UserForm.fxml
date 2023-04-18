@@ -1,14 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.D24_Hostel.controller.UserFormController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="331.0" prefWidth="553.0" style="-fx-background-color: F3FE9C;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.D24_Hostel.controller.UserFormController">
+   <children>
+      <Label layoutX="208.0" layoutY="40.0" text="User Settings">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="130.0" layoutY="100.0" text="User Name         : ">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="130.0" layoutY="134.0" text="Password            :">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtUserName" focusColor="#8d7b68" layoutX="238.0" layoutY="99.0" onAction="#txtUserNameOnAction" prefHeight="25.0" prefWidth="145.0" />
+      <JFXTextField fx:id="txtPassword" focusColor="#8d7b68" layoutX="239.0" layoutY="131.0" prefHeight="25.0" prefWidth="145.0" />
+      <JFXButton layoutX="142.0" layoutY="199.0" onAction="#btnAddOnAction" styleClass="addButton" stylesheets="@../style/Style.css" text="Add User">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="230.0" layoutY="199.0" onAction="#btnUpdateOnAction" styleClass="addButton" stylesheets="@../style/Style.css" text="Update User">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="337.0" layoutY="199.0" onAction="#btnDeleteOnAction" styleClass="deleteButton" stylesheets="@../style/Style.css" text="Delete User">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="397.0" layoutY="275.0" onAction="#btnClearOnAction" prefHeight="29.0" prefWidth="62.0" styleClass="clearButton" stylesheets="@../style/Style.css" text="Clear">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="466.0" layoutY="275.0" onAction="#btnCloseOnAction" prefHeight="29.0" prefWidth="62.0" styleClass="deleteButton" stylesheets="@../style/Style.css" text="Close">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+   </children>
 </AnchorPane>

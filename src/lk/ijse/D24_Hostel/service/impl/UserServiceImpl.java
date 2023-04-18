@@ -24,4 +24,19 @@ public class UserServiceImpl implements UserService {
     public boolean addUser(UserDTO userDTO) {
         return userDAO.addUser(Convertor.convertUserDTOToUser(userDTO));
     }
+
+    @Override
+    public boolean updateUser(UserDTO userDTO) {
+        return userDAO.updateUser(Convertor.convertUserDTOToUser(userDTO));
+    }
+
+    @Override
+    public boolean deleteUser(String text) {
+        return userDAO.deleteUser(text);
+    }
+
+    @Override
+    public UserDTO searchUser(String text) {
+        return Convertor.convertUserToUserDTO(userDAO.searchUser(text));
+    }
 }

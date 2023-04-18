@@ -22,7 +22,7 @@
       <JFXButton layoutX="510.0" layoutY="437.0" onAction="#btnDeleteOnAction" styleClass="deleteButton" stylesheets="@../style/Style.css" text="Delete room" />
       <JFXButton layoutX="510.0" layoutY="403.0" onAction="#btnSearchOnAction" styleClass="addButton" stylesheets="@../style/Style.css" text="Search room" />
       <JFXButton layoutX="739.0" layoutY="505.0" onAction="#btnClearOnAction" styleClass="clearButton" stylesheets="@../style/Style.css" text="Clear" />
-      <TableView fx:id="tblRooms" layoutX="119.0" layoutY="105.0" prefHeight="197.0" prefWidth="573.0">
+      <TableView fx:id="tblRooms" layoutX="119.0" layoutY="105.0" onMouseClicked="#tblRoomsOnMouseClicked" prefHeight="197.0" prefWidth="573.0">
          <columns>
             <TableColumn fx:id="colRoomId" prefWidth="95.33334350585938" text="Room ID" />
             <TableColumn fx:id="colType" prefWidth="167.0" text="Type" />
@@ -30,7 +30,7 @@
             <TableColumn fx:id="colQty" prefWidth="139.33331298828125" text="Available room QTY" />
          </columns>
       </TableView>
-      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="775.0" layoutY="10.0" onMouseClicked="#imgSettingOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+      <ImageView disable="true" fitHeight="25.0" fitWidth="25.0" layoutX="775.0" layoutY="10.0" onMouseClicked="#imgSettingOnMouseClicked" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../assests/icon/icons8-settings-100.png" />
          </image>

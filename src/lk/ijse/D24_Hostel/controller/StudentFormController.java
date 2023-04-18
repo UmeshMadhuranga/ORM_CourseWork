@@ -83,7 +83,6 @@ public class StudentFormController {
         String gender = radioButton.getText();
 
         LocalDate date = dtpckDob.getValue();
-//        Date date = new Date();
 
         StudentDTO studentDTO = new StudentDTO(
                 txtStudentID.getText(),
@@ -93,8 +92,6 @@ public class StudentFormController {
                 date,
                 gender
                 );
-
-//        System.out.println(studentDTO);
 
         boolean isAdded = studentService.addStudent(studentDTO);
         if (isAdded) {
@@ -224,5 +221,19 @@ public class StudentFormController {
     }
 
     public void contactOnMouseClicked(MouseEvent mouseEvent) {
+        if (txtAddress.equals(null)) {
+            new Alert(Alert.AlertType.ERROR,"Student name can't be null").show();
+            dtpckDob.requestFocus();
+        }
+    }
+
+    public void tblStudentOnMouseClicked(MouseEvent mouseEvent) {
+        StudentDTO studentDTO = (StudentDTO) tblStudent.getSelectionModel().getSelectedItem();
+
+        txtStudentID.setText(studentDTO.getStudent_id());
+        txtName.setText(studentDTO.getName());
+        txtAddress.setText(studentDTO.getAddress());
+        txtContact.setText(studentDTO.getContact_no());
+        dtpckDob.setValue(studentDTO.getDob());
     }
 }

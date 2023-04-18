@@ -8,4 +8,10 @@ import java.util.List;
 public interface UserDAO extends SuperDao {
     List<User> getAll();
     boolean addUser(User user);
+
+    boolean updateUser(User user);
+
+    boolean deleteUser(String text);
+
+    User searchUser(String text);
 }
