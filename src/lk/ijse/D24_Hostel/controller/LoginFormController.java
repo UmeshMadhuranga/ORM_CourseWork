@@ -34,24 +34,27 @@ public class LoginFormController {
     }
 
     public void btnLogin(ActionEvent actionEvent) throws IOException {
-//        if (txtUserName.getText().equals("") || txtPassword.getText().equals("")) {
-//            new Alert(Alert.AlertType.ERROR, "Please Enter User name And Password.!").show();
-//            return;
-//        }
+        if (txtUserName.getText().equals("") || txtPassword.getText().equals("")) {
+            new Alert(Alert.AlertType.ERROR, "Please Enter User name And Password.!").show();
+            return;
+        }
 
         UserServiceImpl userService = (UserServiceImpl) ServiceFactory.getService(ServiceTypes.USER);
 
         List<UserDTO> list = userService.getAll();
 
-//        for (UserDTO userDTO : list) {
-//            if (userDTO.getUserName().equalsIgnoreCase(txtUserName.getText()) && userDTO.getPassword()
-//                    .equals(txtPassword.getText()) || userDTO.getPassword().equals(txtPassword2.getText())) {
-//                Navigation.navigate(Routes.REGISTRATION, pane);
-//                return;
-//            }
-//        }
+        for (UserDTO userDTO : list) {
+            if (userDTO.getUserName().equalsIgnoreCase(txtUserName.getText()) && userDTO.getPassword()
+                    .equals(txtPassword.getText()) || userDTO.getPassword().equals(txtPassword2.getText())) {
+                Navigation.navigate(Routes.REGISTRATION, pane);
+                return;
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Please enter correct user name and password.!").show();
+                return;
+            }
+        }
 
-        Navigation.navigate(Routes.REGISTRATION, pane);
+//        Navigation.navigate(Routes.REGISTRATION, pane);
 
     }
 
