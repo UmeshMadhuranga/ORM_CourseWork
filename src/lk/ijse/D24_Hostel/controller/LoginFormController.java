@@ -53,9 +53,6 @@ public class LoginFormController {
                 return;
             }
         }
-
-//        Navigation.navigate(Routes.REGISTRATION, pane);
-
     }
 
     public void btnSignUp(ActionEvent actionEvent) throws IOException {
@@ -85,5 +82,13 @@ public class LoginFormController {
         openEye.setVisible(false);
 
         txtPassword.requestFocus();
+    }
+
+    public void txtPasswordOnAction(ActionEvent actionEvent) throws IOException {
+        btnLogin(actionEvent);
+    }
+
+    public void txtPassword2OnAction(ActionEvent actionEvent) throws IOException {
+        btnLogin(actionEvent);
     }
 }

@@ -58,6 +58,8 @@ public class RegisterFormController {
         loadRegisterId();
         loadRoomIds();
         loadStudentID();
+
+        lblDate.setText(String.valueOf(LocalDate.now()));
     }
 
     private void loadStudentID() {
@@ -146,16 +148,6 @@ public class RegisterFormController {
 
         RegistrationServiceImpl registrationService = (RegistrationServiceImpl) ServiceFactory.getService(ServiceTypes.RESERVATION);
 
-        ////////////////////////////////update rooms//////////////////////////////////////////
-
-        int newQty = qty-1;
-
-        RoomDTO roomDTO1 = new RoomDTO(roomId, roomType, keyMoney, newQty);
-
-        boolean b = registrationService.updateRoom(roomDTO1);
-
-        //////////////////////////////////////////////////////////////////////////
-
         RadioButton radioButton1 = (RadioButton) KeyMoneyGroup.getSelectedToggle();
         String status = radioButton1.getText();
 
@@ -171,6 +163,12 @@ public class RegisterFormController {
 
         boolean isAdded = registrationService.saveRegistration(reservationDTO);
         if (isAdded) {
+
+            int newQty = qty-1;
+            RoomDTO roomDTO1 = new RoomDTO(roomId, roomType, keyMoney, newQty);
+
+            registrationService.updateRoom(roomDTO1);
+
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Done..!");
             alert.show();
         } else {

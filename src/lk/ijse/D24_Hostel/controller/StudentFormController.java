@@ -54,6 +54,7 @@ public class StudentFormController {
 
     public void initialize() {
         loadStudents();
+        lblDate.setText(String.valueOf(LocalDate.now()));
 
         colStudentId.setCellValueFactory(new PropertyValueFactory<Student,String>("student_id"));
         colName.setCellValueFactory(new PropertyValueFactory<Student,String>("name"));

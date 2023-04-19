@@ -3,8 +3,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -15,11 +13,6 @@
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <ImageView disable="true" fitHeight="25.0" fitWidth="25.0" layoutX="775.0" layoutY="10.0" onMouseClicked="#imgSettingOnMouseClicked" pickOnBounds="true" preserveRatio="true" visible="false">
-         <image>
-            <Image url="@../assests/icon/icons8-settings-100.png" />
-         </image>
-      </ImageView>
       <Label fx:id="lblDate" layoutX="14.0" layoutY="12.0" text="Date" textFill="#37306b">
          <font>
             <Font name="System Bold" size="14.0" />

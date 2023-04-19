@@ -46,13 +46,13 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXButton>
-      <PasswordField fx:id="txtPassword" layoutX="115.0" layoutY="253.0" prefHeight="25.0" prefWidth="147.0" promptText="            Password" styleClass="text" stylesheets="@../style/Style.css" />
+      <PasswordField fx:id="txtPassword" layoutX="115.0" layoutY="253.0" onAction="#txtPasswordOnAction" prefHeight="25.0" prefWidth="147.0" promptText="            Password" styleClass="text" stylesheets="@../style/Style.css" />
       <ImageView fx:id="closeEye" fitHeight="17.0" fitWidth="17.0" layoutX="239.0" layoutY="257.0" onMouseClicked="#closeEyeOnMouseClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assests/icon/closeeye.png" />
          </image>
       </ImageView>
-      <TextField fx:id="txtPassword2" layoutX="115.0" layoutY="253.0" prefHeight="25.0" prefWidth="147.0" promptText="            Password" styleClass="text" stylesheets="@../style/Style.css" visible="false" />
+      <TextField fx:id="txtPassword2" layoutX="115.0" layoutY="253.0" onAction="#txtPassword2OnAction" prefHeight="25.0" prefWidth="147.0" promptText="            Password" styleClass="text" stylesheets="@../style/Style.css" visible="false" />
       <ImageView fx:id="openEye" fitHeight="17.0" fitWidth="17.0" layoutX="239.0" layoutY="256.0" onMouseClicked="#openEyeOnMouseClicked" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../assests/icon/open_eye.png" />

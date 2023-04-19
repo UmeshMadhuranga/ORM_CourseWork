@@ -22,6 +22,7 @@ import lk.ijse.D24_Hostel.util.Navigation;
 import lk.ijse.D24_Hostel.util.Routes;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 
 public class RoomFormController {
@@ -44,6 +45,7 @@ public class RoomFormController {
 
     public void initialize() {
         loadRooms();
+        lblDate.setText(String.valueOf(LocalDate.now()));
 
         colRoomId.setCellValueFactory(new PropertyValueFactory<Room,String>("room_type_id"));
         colType.setCellValueFactory(new PropertyValueFactory<Room,String>("type"));
