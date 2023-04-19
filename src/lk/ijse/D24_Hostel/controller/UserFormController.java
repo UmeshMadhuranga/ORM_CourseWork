@@ -30,6 +30,7 @@ public class UserFormController {
         } else {
             new Alert(Alert.AlertType.ERROR, "Error..").show();
         }
+        clearFields();
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
@@ -41,6 +42,7 @@ public class UserFormController {
         } else {
             new Alert(Alert.AlertType.ERROR, "Error..").show();
         }
+        clearFields();
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
@@ -52,6 +54,7 @@ public class UserFormController {
         } else {
             new Alert(Alert.AlertType.ERROR, "Error..").show();
         }
+        clearFields();
     }
 
     public void btnClearOnAction(ActionEvent actionEvent) {
@@ -61,5 +64,10 @@ public class UserFormController {
 
     public void btnCloseOnAction(ActionEvent actionEvent) {
         RegisterFormController.stage.close();
+    }
+
+    public void clearFields(){
+        txtUserName.clear();
+        txtPassword.clear();
     }
 }

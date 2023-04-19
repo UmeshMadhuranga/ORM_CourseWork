@@ -79,7 +79,7 @@ public class RoomFormController {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Error..!");
             alert.show();
         }
-
+        clearFields();
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
@@ -98,6 +98,7 @@ public class RoomFormController {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Error..!");
             alert.show();
         }
+        clearFields();
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
@@ -110,6 +111,7 @@ public class RoomFormController {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Error..!");
             alert.show();
         }
+        clearFields();
     }
 
     public void btnSearchOnAction(ActionEvent actionEvent) {
@@ -141,4 +143,12 @@ public class RoomFormController {
         txtKeyMoney.setText(String.valueOf(roomDTO.getKey_money()));
         txtQty.setText(String.valueOf(roomDTO.getQty()));
     }
+
+    public void clearFields(){
+        txtRoomID.clear();
+        txtType.clear();
+        txtKeyMoney.clear();
+        txtQty.clear();
+    }
+
 }

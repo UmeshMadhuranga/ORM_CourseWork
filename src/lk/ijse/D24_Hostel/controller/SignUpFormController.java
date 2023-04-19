@@ -33,6 +33,7 @@ public class SignUpFormController {
             txtPassword.clear();
             alert.show();
         }
-
+        txtUserName.clear();
+        txtPassword.clear();
     }
 }

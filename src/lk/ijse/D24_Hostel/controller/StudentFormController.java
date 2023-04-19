@@ -102,6 +102,7 @@ public class StudentFormController {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Something wrong.!");
             alert.show();
         }
+        clearFields();
     }
 
     public void btnUpdateStudentOnAction(ActionEvent actionEvent) {
@@ -127,6 +128,7 @@ public class StudentFormController {
             Alert alert = new Alert(Alert.AlertType.WARNING, "Operation Failed..");
             alert.show();
         }
+        clearFields();
     }
 
     public void btnDeleteStudentOnAction(ActionEvent actionEvent) {
@@ -138,6 +140,7 @@ public class StudentFormController {
             Alert alert = new Alert(Alert.AlertType.WARNING, "Operation Failed..");
             alert.show();
         }
+        clearFields();
     }
 
     public void btnSearchStudentOnAction(ActionEvent actionEvent) {
@@ -236,5 +239,12 @@ public class StudentFormController {
         txtAddress.setText(studentDTO.getAddress());
         txtContact.setText(studentDTO.getContact_no());
         dtpckDob.setValue(studentDTO.getDob());
+    }
+
+    public void clearFields(){
+        txtStudentID.clear();
+        txtName.clear();
+        txtAddress.clear();
+        txtContact.clear();
     }
 }
